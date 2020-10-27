@@ -32,7 +32,7 @@ def run(fold):
 
     df_valid.loc[:, "lr_cnt_pred"] = pred
 
-    return df_valid[["id","sentiment", "kfold", "lr_cnt_pred"]]
+    return df_valid[["id", "sentiment", "kfold", "lr_cnt_pred"]]
 
 if __name__ == "__main__":
     dfs = []
@@ -41,5 +41,5 @@ if __name__ == "__main__":
         dfs.append(temp_df)
 
     fin_valid_df = pd.concat(dfs)
-    print(fin_valid_df)
+    print(fin_valid_df.shape)
     fin_valid_df.to_csv("../model_preds/lr_cnt.csv", index=False)

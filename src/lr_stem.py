@@ -40,7 +40,7 @@ def run(fold):
 
     df_valid.loc[:, "lr_stem_pred"] = pred
 
-    return df_valid[["id","sentiment", "kfold", "lr_stem_pred"]]
+    return df_valid[["id", "sentiment", "kfold", "lr_stem_pred"]]
 
 if __name__ == "__main__":
     dfs = []

@@ -41,5 +41,5 @@ if __name__ == "__main__":
         dfs.append(temp_df)
 
     fin_valid_df = pd.concat(dfs)
-    print(fin_valid_df)
+    print(fin_valid_df.shape)
     fin_valid_df.to_csv("../model_preds/lr.csv", index=False)

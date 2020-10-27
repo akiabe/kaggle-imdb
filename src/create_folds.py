@@ -6,9 +6,7 @@ if __name__ == "__main__":
     df.sentiment = df.sentiment.apply(
         lambda x: 1 if x == "positive" else 0
     )
-
     df["kfold"] = -1
-
     df.sample(frac=1).reset_index(drop=True)
 
     kf = model_selection.KFold(n_splits=5)
@@ -16,3 +14,6 @@ if __name__ == "__main__":
         df.loc[val_, "kfold"] = fold
 
     df.to_csv("../input/imdb_train_folds.csv", index=True, index_label="id")
+
+    #test = pd.read_csv("../input/imdb_train_folds.csv")
+    #print(test.head())
